@@ -1,0 +1,544 @@
+
+
+    <!-- ========== ANNOUNCEMENT BAR ========== -->
+    <div class="announcement-bar" id="announcement-bar">
+        <p>🚚 Free Shipping | 💰 COD Available</p>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <button class="hamburger" id="hamburger-btn" aria-label="Open Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="#" class="logo">LUMITOP</a>
+        <button class="cart-toggle" id="cart-toggle-btn" aria-label="Open Cart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+            <span class="cart-count" id="cart-count">0</span>
+        </button>
+    </header>
+
+    <!-- ========== MOBILE NAV DRAWER ========== -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Menu</span>
+            <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close Menu">✕</button>
+        </div>
+        <a href="#" class="mobile-nav-link active">Home</a>
+        <a href="#product-section" class="mobile-nav-link">Shop Here</a>
+        <a href="#" class="mobile-nav-link">My Orders</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+        <div class="mobile-nav-footer">
+            <a href="#" class="mobile-nav-link-small">Log in</a>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <div class="hero-image-wrapper">
+            <img src="{{ 'hero-banner-v2.png' | asset_url }}" alt="LUMITOP Sunset Projection Lamp creating warm ambient glow" class="hero-image" loading="eager">
+            <div class="hero-gradient-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Experience the Golden Hour, Anytime.</h1>
+            <p class="hero-subtitle">Transform your space with the LUMITOP™ Sunset Projection Lamp.</p>
+            <a href="#product-section" class="btn btn-primary hero-cta">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- ========== TAGLINE SECTION ========== -->
+    <section class="tagline-section">
+        <div class="container">
+            <h2 class="tagline-title">Minimal Light, Maximum Energy</h2>
+            <p class="tagline-text">Portable. Foldable. Effortlessly aesthetic.<br>Illuminate your space with a lamp designed for modern living.</p>
+            <a href="#product-section" class="btn btn-outline">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- ========== COLORS BANNER ========== -->
+    <section class="colors-banner">
+        <div class="container">
+            <h2 class="colors-title">AVAILABLE IN 16 RGB COLORS</h2>
+            <p class="colors-subtitle">Control every shade with the included remote</p>
+            <div class="color-preview-dots">
+                <span style="background:#FF4500"></span>
+                <span style="background:#FF8C00"></span>
+                <span style="background:#FFD700"></span>
+                <span style="background:#FF1493"></span>
+                <span style="background:#8A2BE2"></span>
+                <span style="background:#00CED1"></span>
+                <span style="background:#00FF7F"></span>
+                <span style="background:#1E90FF"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCT SECTION ========== -->
+    <section class="product-section" id="product-section">
+        <div class="product-gallery">
+            <div class="gallery-main" id="gallery-main">
+                <div class="gallery-slides" id="gallery-slides">
+                    <img src="{{ 'product-1.jpg' | asset_url }}" alt="Sunset Lamp LED - Full View" class="gallery-slide active" data-index="0">
+                    <img src="{{ 'product-2.jpg' | asset_url }}" alt="Sunset Lamp with Remote Control" class="gallery-slide" data-index="1">
+                    <img src="{{ 'product-3.jpg' | asset_url }}" alt="Brightness Adjustment Demo" class="gallery-slide" data-index="2">
+                    <img src="{{ 'product-4.jpg' | asset_url }}" alt="Mode Settings" class="gallery-slide" data-index="3">
+                    <img src="{{ 'product-5.jpg' | asset_url }}" alt="Remote Control Features" class="gallery-slide" data-index="4">
+                </div>
+                <button class="gallery-nav gallery-prev" id="gallery-prev" aria-label="Previous image">‹</button>
+                <button class="gallery-nav gallery-next" id="gallery-next" aria-label="Next image">›</button>
+                <div class="gallery-dots" id="gallery-dots">
+                    <span class="gallery-dot active" data-index="0"></span>
+                    <span class="gallery-dot" data-index="1"></span>
+                    <span class="gallery-dot" data-index="2"></span>
+                    <span class="gallery-dot" data-index="3"></span>
+                    <span class="gallery-dot" data-index="4"></span>
+                </div>
+            </div>
+            <div class="gallery-thumbs" id="gallery-thumbs">
+                <img src="{{ 'product-1.jpg' | asset_url }}" alt="Thumb 1" class="gallery-thumb active" data-index="0">
+                <img src="{{ 'product-2.jpg' | asset_url }}" alt="Thumb 2" class="gallery-thumb" data-index="1">
+                <img src="{{ 'product-3.jpg' | asset_url }}" alt="Thumb 3" class="gallery-thumb" data-index="2">
+                <img src="{{ 'product-4.jpg' | asset_url }}" alt="Thumb 4" class="gallery-thumb" data-index="3">
+                <img src="{{ 'product-5.jpg' | asset_url }}" alt="Thumb 5" class="gallery-thumb" data-index="4">
+            </div>
+        </div>
+
+        <div class="product-info">
+            {% assign main_product = all_products['lumitop-sunset-lamp'] %}
+            <h1 class="product-title">{{ main_product.title | default: 'LUMITOP™ Sunset Projection LED Lamp – RGB Remote Control, Foldable & USB Powered' }}</h1>
+            <div class="product-rating">
+                <div class="stars">★★★★★</div>
+                <span class="rating-count">(140+ reviews)</span>
+            </div>
+            <div class="product-price">
+                <span class="sale-price">{{ main_product.price | money }}</span>
+                {% if main_product.compare_at_price > main_product.price %}
+                    <span class="compare-price">{{ main_product.compare_at_price | money }}</span>
+                    <span class="discount-badge">{{ main_product.compare_at_price | minus: main_product.price | times: 100 | divided_by: main_product.compare_at_price }}% OFF</span>
+                {% else %}
+                    <span class="compare-price">₹1,499</span>
+                    <span class="discount-badge">63% OFF</span>
+                {% endif %}
+            </div>
+            <p class="product-tax-note">Tax included. <a href="#">Shipping</a> calculated at checkout.</p>
+
+            <div class="product-variant" id="color-variant">
+                <label class="variant-label">Color: <strong id="selected-color-name">{% if main_product.variants.size > 0 %}{{ main_product.variants.first.title }}{% else %}Sunset Orange{% endif %}</strong></label>
+                <div class="variant-options">
+                    {% if main_product.variants.size > 0 %}
+                        {% for variant in main_product.variants %}
+                            <button class="color-swatch {% if forloop.first %}active{% endif %}" 
+                                    data-color="{{ variant.title }}" 
+                                    data-variant-id="{{ variant.id }}"
+                                    data-price="{{ variant.price | money_without_currency }}"
+                                    style="background: {% case variant.title | downcase %}{% when 'sunset orange' %}linear-gradient(135deg, #FF4500, #FF8C00){% when 'rainbow rgb' %}linear-gradient(135deg, #FF0000, #00FF00, #0000FF){% when 'golden warm' %}linear-gradient(135deg, #FFD700, #FFA500){% when 'purple haze' %}linear-gradient(135deg, #8A2BE2, #FF1493){% else %}#333{% endcase %}" 
+                                    title="{{ variant.title }}"></button>
+                        {% endfor %}
+                    {% else %}
+                        <button class="color-swatch active" data-color="Sunset Orange" style="background: linear-gradient(135deg, #FF4500, #FF8C00)" title="Sunset Orange"></button>
+                        <button class="color-swatch" data-color="Rainbow RGB" style="background: linear-gradient(135deg, #FF0000, #00FF00, #0000FF)" title="Rainbow RGB"></button>
+                        <button class="color-swatch" data-color="Golden Warm" style="background: linear-gradient(135deg, #FFD700, #FFA500)" title="Golden Warm"></button>
+                        <button class="color-swatch" data-color="Purple Haze" style="background: linear-gradient(135deg, #8A2BE2, #FF1493)" title="Purple Haze"></button>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="product-quantity">
+                <label class="variant-label">Quantity</label>
+                <div class="quantity-selector">
+                    <button class="qty-btn qty-minus" id="qty-minus" aria-label="Decrease quantity">−</button>
+                    <input type="number" class="qty-input" id="qty-input" value="1" min="1" max="10" readonly>
+                    <button class="qty-btn qty-plus" id="qty-plus" aria-label="Increase quantity">+</button>
+                </div>
+            </div>
+
+            <div class="product-actions">
+                <button class="btn btn-add-to-cart" id="add-to-cart-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    Add to Cart
+                </button>
+                <button class="btn btn-buy-now" id="buy-now-btn">Buy it Now</button>
+            </div>
+
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                    <span>Secure Payment</span>
+                </div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    <span>Free Shipping</span>
+                </div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>COD Available</span>
+                </div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    <span>1400+ Sold</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCT DESCRIPTION ========== -->
+    <section class="product-details-section" id="product-details">
+        <div class="container">
+            <div class="section-header-accent">
+                <h2>About the Product</h2>
+            </div>
+
+            <div class="detail-block">
+                <h3>🔦 Product Details</h3>
+                <p>Designed to elevate your space with minimal effort, the LUMITOP™ Sunset Projection Lamp combines modern aesthetics with stunning lighting effects. This foldable, USB-powered lamp projects a gorgeous sunset glow onto any wall or ceiling.</p>
+                <ul class="detail-list">
+                    <li>Stunning sunset projection effect</li>
+                    <li>16 RGB color options via remote</li>
+                    <li>Foldable & height adjustable design</li>
+                    <li>Ideal for bedrooms, living rooms, parties & photography</li>
+                </ul>
+            </div>
+
+            <div class="detail-block">
+                <h3>⚡ Features & Specifications</h3>
+                <p>Everything you need, nothing you don't.</p>
+                <ul class="detail-list">
+                    <li><strong>Remote Control</strong> – 16 static colors + 4 dynamic modes</li>
+                    <li><strong>4 Light Modes</strong> – Flash, Strobe, Fade, Smooth</li>
+                    <li><strong>Adjustable Brightness</strong> – from 10% to 100%</li>
+                    <li><strong>USB Powered</strong> – plug & play with any USB port</li>
+                    <li><strong>360° Rotation Head</strong> – project in any direction</li>
+                    <li><strong>Foldable & Portable</strong> – easy to carry and store</li>
+                    <li><strong>Height Adjustable</strong> – extend from 18cm to 27cm</li>
+                    <li><strong>Energy Efficient LED</strong> – low heat, long lifespan</li>
+                </ul>
+            </div>
+
+            <div class="detail-block">
+                <h3>📦 What's Included</h3>
+                <p>Your LUMITOP order comes carefully packed to ensure a smooth unboxing experience.</p>
+                <ul class="detail-list checklist">
+                    <li>1 × LUMITOP™ Sunset Projection Lamp</li>
+                    <li>1 × IR Remote Control</li>
+                    <li>1 × USB Cable</li>
+                    <li>1 × User Manual</li>
+                </ul>
+            </div>
+
+            <div class="detail-block">
+                <h3>🌙 Lighting Experience</h3>
+                <p>The LUMITOP sunset lamp creates an immersive atmosphere that transforms any room. Whether you're winding down after a long day, setting up for a photoshoot, or adding vibes to a party, the warm sunset glow creates a mesmerizing ambience.</p>
+                <p><strong>Perfect for:</strong></p>
+                <ul class="detail-list">
+                    <li>Night-time relaxation & meditation</li>
+                    <li>Photography & content creation</li>
+                    <li>Bedroom & ambient mood lighting</li>
+                    <li>Parties & celebrations</li>
+                </ul>
+            </div>
+
+            <div class="detail-block">
+                <h3>🌱 Energy Efficient & Eco-Friendly</h3>
+                <p>Built with sustainability in mind, LUMITOP uses low-power LED technology that consumes less electricity while delivering consistent brightness.</p>
+                <ul class="detail-list">
+                    <li>Saves energy & reduces power bills</li>
+                    <li>Long-lasting LED lifespan (50,000+ hours)</li>
+                    <li>Low heat emission for safe use</li>
+                    <li>Environment-friendly lighting solution</li>
+                </ul>
+            </div>
+
+            <div class="detail-block">
+                <h3>🏠 Perfect For Every Space</h3>
+                <p>One lamp. Endless possibilities.</p>
+                <ul class="detail-list">
+                    <li>Bedroom & bedside tables</li>
+                    <li>Study rooms & work desks</li>
+                    <li>Living rooms & side tables</li>
+                    <li>Cafes, studios & aesthetic corners</li>
+                    <li>Photography & video backgrounds</li>
+                </ul>
+                <p class="detail-note">Its minimal, foldable design blends seamlessly with both modern and classic interiors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCT WORKING SIMULATION ========== -->
+    <section class="video-section" data-reveal>
+        <div class="container">
+            <div class="section-header-accent">
+                <h2>Watch It In Action</h2>
+            </div>
+            <div class="video-wrapper">
+                <div class="video-simulation">
+                    <div class="sim-lamp-base"></div>
+                    <div class="sim-lamp-head"></div>
+                    <div class="sim-projection"></div>
+                    <div class="sim-overlay">
+                        <span class="sim-badge">Dynamic Mode</span>
+                        <div class="sim-controls">
+                            <button class="sim-btn active" onclick="document.querySelector('.sim-projection').className='sim-projection sunset'">Sunset</button>
+                            <button class="sim-btn" onclick="document.querySelector('.sim-projection').className='sim-projection rainbow'">Rainbow</button>
+                            <button class="sim-btn" onclick="document.querySelector('.sim-projection').className='sim-projection purple'">Purple</button>
+                            <button class="sim-btn pulse-glow" onclick="document.querySelector('.sim-projection').className='sim-projection auto-cycle'">Auto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="video-caption">Experience smooth transitions and 16 vibrant colors right from the remote.</p>
+        </div>
+    </section>
+
+    <!-- ========== CUSTOMER REVIEWS ========== -->
+    <section class="reviews-section" data-reveal>
+        <div class="container">
+            <div class="section-header-accent">
+                <h2>Customer Reviews</h2>
+            </div>
+            <div class="reviews-summary">
+                <div class="reviews-score">4.9</div>
+                <div class="reviews-stars">★★★★★</div>
+                <div class="reviews-count">Based on 140+ Reviews</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-stars">★★★★★</div>
+                    <span class="review-date">Oct 12, 2025</span>
+                </div>
+                <h4 class="review-title">Total Value for Money!</h4>
+                <p class="review-body">I was skeptical because it's so cheap compared to actual sunset lamps online, but honestly, this is amazing for the price. The remote works well and the colors actually look rich. Neutral on the build quality (it's basic plastic/metal), but the light output is stunning! 10/10 recommend.</p>
+                <div class="review-author">
+                    <div class="author-avatar">A</div>
+                    <div class="author-info">
+                        <strong>Anjali S.</strong>
+                        <span class="verified">✓ Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-stars">★★★★★</div>
+                    <span class="review-date">Sep 28, 2025</span>
+                </div>
+                <h4 class="review-title">Good product, nice vibes</h4>
+                <p class="review-body">Looks exactly like the Instagram videos. You just plug it into a USB and it completely changes the room. At ₹549 this was a steal. Shipping took 4 days which was okay. I use it for my background while streaming and everyone asks about it!</p>
+                <div class="review-author">
+                    <div class="author-avatar">R</div>
+                    <div class="author-info">
+                        <strong>Rahul M.</strong>
+                        <span class="verified">✓ Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-stars">★★★★☆</div>
+                    <span class="review-date">Sep 15, 2025</span>
+                </div>
+                <h4 class="review-title">Pretty good for the price</h4>
+                <p class="review-body">The remote is a bit small but it has so many color options. The sunset one is by far the best mode. Definitely worth the ₹549. Would buy again as a gift.</p>
+                <div class="review-author">
+                    <div class="author-avatar">P</div>
+                    <div class="author-info">
+                        <strong>Priya K.</strong>
+                        <span class="verified">✓ Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn btn-outline load-more-reviews">Load More Reviews</button>
+        </div>
+    </section>
+
+    <!-- ========== NEWSLETTER SECTION ========== -->
+    <section class="newsletter-section" id="contact">
+        <div class="container">
+            <h2>Subscribe to our emails</h2>
+            <p>Be the first to know about new collections and exclusive offers.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="Email" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="footer-logo">Lumitop Store</a>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Refund Policy</a>
+                <a href="#">Contact Information</a>
+                <a href="#">Shipping Policy</a>
+            </div>
+            <div class="footer-payment-icons">
+                <span class="payment-icon">💳</span>
+                <span class="payment-icon">🏦</span>
+                <span class="payment-icon">📱</span>
+            </div>
+            <p class="footer-copyright">© 2026, Lumitop Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ========== CART DRAWER ========== -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3>Your Cart</h3>
+            <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Close Cart">✕</button>
+        </div>
+        <div class="cart-drawer-body" id="cart-drawer-body">
+            <div class="cart-empty" id="cart-empty">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                <p>Your cart is empty</p>
+                <a href="#product-section" class="btn btn-outline cart-continue-btn" id="cart-continue-shopping">Continue Shopping</a>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+        </div>
+        <div class="cart-drawer-footer" id="cart-drawer-footer" style="display:none;">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cart-subtotal-amount">₹0</span>
+            </div>
+            <p class="cart-shipping-note">Shipping & taxes calculated at checkout</p>
+            <button class="btn btn-checkout" id="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- ========== CHECKOUT MODAL ========== -->
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="checkout-modal-content">
+            <div class="checkout-header">
+                <h3>Checkout</h3>
+                <button class="checkout-close" id="checkout-close" aria-label="Close Checkout">✕</button>
+            </div>
+            <div class="checkout-body">
+                <div class="checkout-summary" id="checkout-summary"></div>
+                <form class="checkout-form" id="checkout-form">
+                    <h4>Shipping Details</h4>
+                    <div class="form-row">
+                        <input type="text" id="checkout-name" placeholder="Full Name *" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" id="checkout-email" placeholder="Email *" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" id="checkout-phone" placeholder="Phone Number *" required pattern="[0-9]{10}">
+                    </div>
+                    <div class="form-row">
+                        <textarea id="checkout-address" placeholder="Full Address *" required rows="3"></textarea>
+                    </div>
+                    <div class="form-row form-row-half">
+                        <input type="text" id="checkout-city" placeholder="City *" required>
+                        <input type="text" id="checkout-pincode" placeholder="Pincode *" required pattern="[0-9]{6}">
+                    </div>
+                    <div class="form-row">
+                        <input type="text" id="checkout-state" placeholder="State *" required>
+                    </div>
+
+                    <h4>Payment Method</h4>
+                    <div class="payment-methods">
+                        <label class="payment-method active">
+                            <input type="radio" name="payment" value="razorpay" checked>
+                            <span class="payment-radio"></span>
+                            <span class="payment-label">
+                                <strong>Pay Online</strong>
+                                <small>UPI, Card, Net Banking, Wallets</small>
+                            </span>
+                        </label>
+                        <label class="payment-method">
+                            <input type="radio" name="payment" value="cod">
+                            <span class="payment-radio"></span>
+                            <span class="payment-label">
+                                <strong>Cash on Delivery</strong>
+                                <small>Pay when you receive your order</small>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="checkout-total">
+                        <div class="checkout-total-row">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">₹0</span>
+                        </div>
+                        <div class="checkout-total-row">
+                            <span>Shipping</span>
+                            <span class="free-shipping">FREE</span>
+                        </div>
+                        <div class="checkout-total-row total-final">
+                            <span>Total</span>
+                            <span id="checkout-total-amount">₹0</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-place-order" id="place-order-btn">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ORDER SUCCESS MODAL ========== -->
+    <div class="success-modal" id="success-modal">
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h2>Order Placed Successfully!</h2>
+            <p>Thank you for your purchase. You'll receive a confirmation email shortly.</p>
+            <p class="order-id" id="order-id-display"></p>
+            <button class="btn btn-primary" id="success-close-btn">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- ========== OVERLAY ========== -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ========== STICKY ADD TO CART (MOBILE) ========== -->
+    <div class="sticky-atc" id="sticky-atc">
+        <div class="sticky-atc-info">
+            <span class="sticky-atc-price">₹549</span>
+            <span class="sticky-atc-compare">₹1,499</span>
+        </div>
+        <button class="btn btn-add-to-cart sticky-atc-btn" id="sticky-add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- ========== AI CHATBOT WIDGET ========== -->
+    <div class="chatbot-widget" id="chatbot-widget">
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">✨</div>
+                    <div>
+                        <h4>Lumi AI</h4>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <button class="chatbot-close-btn" id="chatbot-close">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="chat-message bot">
+                    Hello! 👋 I'm Lumi, your personal shopping assistant. Do you have any questions about the Sunset Lamp or our shipping policies?
+                </div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off">
+                <button id="chatbot-send">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </div>
+        <button class="chatbot-fab" id="chatbot-fab">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="fab-icon-chat" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="fab-icon-close" stroke="currentColor" stroke-width="2" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </div>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    {{ 'app.js' | asset_url | script_tag }}

@@ -1,0 +1,10 @@
+{
+  "name": "lumitop-store",
+  "version": 2,
+  "public": true,
+  "cleanUrls": true,
+  "framework": null,
+  "installCommand": null,
+  "buildCommand": null,
+  "outputDirectory": "."
+}
